@@ -1,9 +1,10 @@
 // TODO: ARRAYS
 
 /*
-   * Arrays are reference types, meaning that if defined with const,
-   * other than the reference point itself, contents of an array can still be changed.
-   * New array cannot be assigned to it.
+   * Arrays are reference types, meaning that the contents of an array can still be 
+   * changed, even if it has been defined with "const". It is the reference point itself
+   * that must stay the same, contents can change.
+   * New array cannot be assigned to a variable defined with "const".
    * If "let" was used, then we can redeclare variable value with a new array, 
    * but that would simply mean overwriting variable value altogether.
 */
@@ -80,7 +81,7 @@ lotto;
 // * shift - remove item from the beginning of array
 lotto.shift();
 lotto;
-// ? return value: [44, 12, 33, 56, 66]
+// ? return value: [44, 12, 22, 56, 66]
 
 
 
@@ -148,25 +149,25 @@ week.slice();
 
 // * splice - remove, add or replace items in array
 
-// ? myCollection is currently: [12, "dog", true, null, NaN];
+// ? myCollection is currently: [12, "dog", true, null, NaN]
 
 // * splice remove item
 // ? start index / delete item count
 myCollection.splice(2, 2);
 myCollection;
-// ? return value: [ 12, "dog", NaN ]
+// ? return value: [12, "dog", NaN]
 
 // * splice add item
 // ? start index / delete item count / added value
 myCollection.splice(1, 0, 'new item');
 myCollection;
-// ? return value: [ 12, "new item", "dog", NaN ]
+// ? return value: [12, "new item", "dog", NaN]
 
 // * splice replace item
-// ? start index / delete item count / added value
+// ? start index / delete item count / added values
 myCollection.splice(0, 2, 'new item 1', 'new item 2');
 myCollection;
-// ? return value: [ "new item 1", "new item 2", "dog", NaN ]
+// ? return value: ["new item 1", "new item 2", "dog", NaN]
 
 
 
@@ -181,4 +182,4 @@ const myLetters = ['C', 'E', 'B', 'A', 'D'];
 
 // * alphabetical sort
 myLetters.sort();
-// ? return value: [ "A", "B", "C", "D", "E" ]
+// ? return value: ["A", "B", "C", "D", "E"]
