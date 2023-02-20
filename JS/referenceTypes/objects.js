@@ -1,69 +1,54 @@
-// Objects
+// TODO: OBJECTS
 
-// --- --- --->
-
-// simple Object syntax
-const fitnessData = {
-    totalSteps: 111111,
-    totalMiles: 222222,
-    avgCalorieBurn: 1000,
-    workoutThisWeek: '5 of 7',
-    avgGoodSleep: '2:13',
-    10: 'ten'
-}
-
-// access Object key value
-fitnessData.totalMiles
-// return 222222
-
-// access Object key (key is declared as a string)
-fitnessData[10]
-// return ten
-
-// also i can already do
-fitnessData['10']
-// return ten (outcome is the same)
-// [] are used to find non-valid JS syntax properties
-// you always use '' around object property in [], otherwise it may look for a variable
-
-// --- --- --->
-
-// accessing methods
-const palette = {
-    red: '#eb4d4b',
-    yellow: '#f9ca24',
-    blue: '#30336b'
-};
-
-let mysteryColor = 'yellow';
-
-// accessing variable value
-palette[mysteryColor]
-// return "#f9ca24"
-// it is looking for the value of mysteryColor and then takes the value from the palette
-// mostly used when we try passing variable value to the specified object
-
-// accessing property
-palette.mysteryColor
-// return undefined
-// it is looking for an actual property called mysteryColor that we don't have in our palette
-
-// --- --- --->
-
-// add a property
-const userReviews = {}; // empty object
-
-// option 1
-userReviews['Agatha'] = 4.0;
-
-// option 2
-userReviews.Sophie = 5.0;
-
-/* return userReviews {
-    Agatha: 4.0,
-    Sophie: 5.0
-}
+/*
+   * 
 */
+
+// * simple mixed value object
+const fitnessData = {
+    totalSteps: 10000,
+    totalMiles: 5,
+    avgCalorieBurn: 800,
+    workoutThisWeek: '3 of 4',
+    avgGoodSleep: '7:00h'
+}
+
+
+
+// TODO: OBJECT ACCESS
+
+// * Accessing an object property that has not been defined will result with "undefined".
+
+// * access object key value with . syntax
+fitnessData.totalMiles;
+// ? return value: 5
+
+// * access object key value with [] syntax
+fitnessData['totalMiles'];
+// ? return value: 5
+
+// * access object key value with variable value
+const myTotalSteps = 'totalSteps';
+fitnessData[myTotalSteps];
+// ? return value: 10000
+
+
+
+// TODO: OBJECT CREATION
+
+// * make an empty object
+const profile = {};
+
+// * setting first property and value
+profile['name'] = 'Andri';
+
+// * setting second property and value
+profile['age'] = 25;
+
+profile;
+// ? return value: { name: "Andri", age: 25 }
+
+
 
 // update existing property
 
