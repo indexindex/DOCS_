@@ -1,0 +1,96 @@
+/* CREATE TABLE */
+
+// example
+CREATE TABLE table_name (column_1 datatype, column_2 datatype, column_3 datatype);
+
+// real example
+CREATE TABLE users (name text, age smallint, birthday date);
+
+
+
+/* INSERT INTO */
+
+// example
+INSERT INTO table_name (column_1, column_2, column_3) VALUES (value_1, value_2, value_3);
+
+// real example
+INSERT INTO users (name, age, birthday) VALUES ('Andri', 22, '1997-12-04');
+
+ALTER TABLE table_name ADD column datatype; (add column to existing table);
+ALTER TABLE users ADD score smallint;
+
+
+
+/* UPDATING */
+
+// example
+UPDATE table_name
+SET some_column = some_value
+WHERE some_column = some_value;
+
+// real example (one user)
+UPDATE users SET score = 50 WHERE name = 'Andri';
+
+// real example (two users)
+UPDATE users SET score = 100 WHERE name = 'Agatha' OR name = 'Sophie';
+
+
+
+/* FUNCTIONS */
+
+SELECT AVG(score) FROM users; (average score)
+
+SELECT SUM(age) FROM users; (sum of users age)
+
+SELECT COUNT(name) FROM users; (counts how many users we have)
+
+
+
+/* RELATIONSHIPS */
+
+*(serial is unique ID)
+*(NOT NULL means it must be a filled property)
+*(PRIMARY KEY is a unique door to access data, there can only be one per table)
+*(secret is variable with size 100 as max)
+*(UNIQUE keyword says that if name already exists then we can't insert into it)
+
+CREATE TABLE login (
+    ID serial NOT NULL PRIMARY KEY,
+    secret VARCHAR (100) NOT NULL,
+    name text UNIQUE NOT NULL
+);
+
+INSERT INTO login (secret, name) VALUES ('abc', 'Andri');
+
+
+
+/* JOINING RELATIONSHIPS */
+
+SELECT * FROM users JOIN login ON users.name = login.name;
+
+
+
+/* DELETE USER AND TABLE */
+
+DELETE FROM users WHERE name = 'Sophie'; (delete user)
+
+DROP TABLE login; (deletes table login)
+DROP TABLE users; (deletes table users)
+
+
+
+/* UNIVERSAL COMMANDS */
+
+\d (shows tables in terminal)
+
+SELECT name, age, birthday FROM users; (shows table users with specific values)
+
+SELECT * FROM users; (shows table users with all values)
+
+SELECT * FROM users WHERE name LIKE 'A%'; (lists users with name that starts with A)
+
+SELECT * FROM users WHERE name LIKE '%y'; (lists users with name that ends with y)
+
+SELECT * FROM users ORDER BY score DESC; (sorts the score column in descending order)
+
+SELECT * FROM users ORDER BY score ASC; (sorts the score column in ascending order)

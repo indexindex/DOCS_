@@ -1,0 +1,103 @@
+/*  CSS Grid & Flexbox now beats Bootstrap  */
+
+/*  Flexbox is good to use for columns, 
+example could be my anime website with anime cards listed by columns  */
+
+/*  CSS Grid is good for organizing both columns and rows (image gallery)  */
+
+
+
+/*  Usually when we want to start using CSS Grid 
+we first have to make a container in HTML (div class="container"), 
+and inside this container we have items we want to use in a grid  */
+
+.container {
+    display: grid; /*  declared this class as a grid system  */
+    grid-template-columns: 300px 300px; /*  Very Important property, 
+    defines how many columns we want to use, 
+    giving two values makes it count them as two columns with 300px width  */
+    grid-gap: 20px; /*  tells, how much gap we want between the grids  */
+}
+
+
+
+/*  fr (fraction) is a unit that does the best layout responsiveness   */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*  1 fraction in this column, fills all free space, 
+    if we add another 1fr then we will have 2 equally sized columns fully responsive  */
+    grid-gap: 20px;
+}
+
+/*  1fr 1fr 2fr = 3 columns, first two will be twice smaller than the third one  */
+
+
+
+/*  controlling rows  */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: repeat(3, 1fr); /*  how many repeats we want to define  */
+    /*  first number is a count of repeats, 
+    next number defines value of what we want to repeat 3 times  */
+    grid-gap: 20px;
+    grid-template-rows: 1fr 2fr; /*  define how rows look  */
+}
+
+
+
+/*  justify-items & align-items (not very needed properties)
+    FULL GRID RESPONSIVENESS  */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /*  
+    auto-fill = automatically adjusts to the screen viewport, makeing it well-responsive,
+    minmax = minimum column size, max column size  */
+    /*  minmax values here mean that when screen size hits 200px it will automatically be 1fr  */
+    grid-gap: 20px;
+    grid-template-rows: 1fr 2fr;
+    justify-items: start; /*  shifts items to - start = left, end = right  */
+    align-items: end; /*  shifts items to - start = top, end = bottom  */
+}
+
+
+
+/*  This container was mainly focused to change grid structure  */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    grid-template-rows: 1fr 2fr;
+}
+
+/*  This class let's us change structure of specific column that this class is attached to  */
+.example-item {
+    grid-column-start: 1; /*  means, start column from first border-line  */
+    grid-column-end: 4;  /*  means, end column from fourth border-line 
+    (last line of third grid box)  */
+
+    /*  short-hand way of writing that same code  */
+    grid-column: 1/4;
+
+    /*  make that specific column stretch all the way to the end of viewport  */
+    grid-column: 1/-1; /*  one column taking full width of a row 
+    (-1 indicates the end of the viewport)  */
+
+    /*  we can also do similar actions with span  */
+    grid-column: span 4; /*  taking width of 4 columns  */
+
+
+
+    /*  now we can also change height of a row  */
+    grid-row: 1/3; /*  moves items with this class to first border-line 
+    and then sets height all the way to the last border-line of second row  */
+}
+
+
+
+.example-item {
+    grid-column: span 4;
+    grid-row: 1/3;
+    justify-self: start; /*  used for individual items (push item to left of column)  */
+    align-self: end; /*  used for individual items (push item to bottom of row)  */
+}

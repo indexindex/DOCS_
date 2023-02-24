@@ -1,0 +1,105 @@
+/*  default rule of css coding  */
+Selector {
+    Property: value;
+}
+
+
+
+li {
+    list-style: none; /*removes list bullets/numbers*/
+    display: block; /*display list items on top of each other*/
+    display: inline-block; /*display list items inline*/
+}
+
+
+
+/*symbolises all elements*/
+* {
+    /*applies values to all elements*/
+}
+
+
+
+/*rgba usage*/
+* {
+    /*alpha can go from 0-1 and you can set the desired opacity*/
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+/*Selectors:*/
+
+element element
+/*select all p inside h2 (main focus is on p)*/
+h2 p {
+    color: none;
+}
+
+element > element
+/*Select all p that have parent of h2*/
+h2 > p {
+    color: none;
+}
+
+element + element
+/*Selects any p element that is exactly after h2 element*/
+/*when h2 tag ends and next tag is p, then styles apply*/
+h2 + p {
+    color: none;
+}
+
+/*applies style to last element with this class*/
+/*usually good for list items*/
+.class:last-child {
+    color: none;
+}
+
+/*applies style to first element with this class*/
+/*usually good for list items*/
+.class:first-child {
+    color: none;
+}
+
+
+
+/*Specificity scale*/
+1. Inline style
+2. ID
+3. Class
+4. Element
+
+/*Importance*/
+!important
+
+/*Source Order*/↓
+/*CSS is reading code from top to bottom*/
+/*last styles always get applied*/
+
+
+
+/*float property tips*/
+img {
+    float: right; /*float is still a little problematic to use*/
+}
+
+/*random next element*/
+footer {
+    clear: both; /*is always advised to use right after float has been defined*/
+}
+/*otherwise picture will jump past footer and push it's text to the left*/
+
+
+
+p {
+    font-size: 20px;
+}
+
+em 
+/*5em is 5 times the size of p, that we have declared*/
+/*5em is equal to 100px*/
+/*em is also nice because it always stays relative to p font-size*/
+
+rem
+/*always twice as big compared to root element (HTML)*/
+/*not affected by changing value in p font-size*/

@@ -1,0 +1,7 @@
+/*  Flexbox properties  */
+
+.container { /*  It will apply for div container class  */
+    display: flex; /*  Activates flexbox  */
+    flex-wrap: wrap; /*  Wraps content on the page  */
+    justify-content: center; /*  Content is set to center  */
+}

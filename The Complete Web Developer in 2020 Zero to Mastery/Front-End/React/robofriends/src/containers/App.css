@@ -1,0 +1,10 @@
+@font-face {
+    src: url('./Robots.otf');
+    font-family: 'Robots';
+  }
+
+h1 {
+    font-family: 'Robots';
+    font-weight: 200;
+    color: #2E2E2E;
+}

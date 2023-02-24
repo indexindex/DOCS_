@@ -1,0 +1,53 @@
+CSS - Things To Remember!
+
+	*	Input elements (while building a form) don't usually inherit font-family and font color, so I need to set them manually like this → (font-family: inherit; color: inherit;)
+	*	When using ::after pseudo-element i should always define (content: "") property as well;
+	*	Table positioning: give parent element 'display: table' and child elements 'display: table-cell'. That way i can have the same height for my content elements.
+		+ I can use 'vertical-align: middle' to center table-cell content.
+	*	'clip-path' property usually breaks some dimensions and thus it's recommended to use 'overflow: hidden' on it.
+	*	'shape-outside: circle' needs to have width, height and float defined to work.
+	*	when declaring "position: absolute" then parent must have a "position: relative".
+	*	z-index only works with defined position
+	*	<form> elements don't inherit font
+	*	inline elements, such as <a> links, can't have padding before we declare either block or inline-block property.
+	*	element > * = select all of this parents child elements
+	*	div > p = Selects all <p> elements where the parent is a <div> element
+	*	div + p = Selects the first <p> element that are placed immediately after <div> elements
+	*	div ~ p = Selects every <p> element that are preceded by a <div> element
+	*	currentColor property is very useful, it just inherits a color from parent element (potentially less code to write in some scenarios)
+	*	img should always be a block or inline-block, that way we can avoid whitespace underneath
+	*	padding or margin cannot be applied to inline elements, they either gotta be inline-block or block elements
+	*	object-fit: cover only works with defined with and height
+	*	set transition to initial element, then it will have fluid animation when hovered on/off
+
+FLEXBOX - Things To Remember!
+
+	*	align-content - applies if there are more than one flex items (rows), works along cross-axis Y
+	*	align-self - align the items individually inside flex container (default value is auto, which means they inherit a value of align-item from flex container, align-items default value is stretch)
+	*	instead of using width property, we should use "flex: 0 0 100%" on a specific flex item
+	*	to have element occupy all available space then use "flex: 1"
+
+SVG	- Things To Remember!
+	
+	*	This method only works with web-server (works with localhost)
+	*	including svg's through sprite file is consider the best way, it has many advantages, one good advantage for example is that we can change color of svg icons
+	*	To use "sprite" file in HTML, follow this structure:
+		<svg class="">
+			<use xlink:href="img/sprite.svg#icon-name"></use>
+		</svg>
+
+		!xlink:href will point to "sprite.svg" file, and this way we have access to all svg icons inside that file.
+		!after pointing to "sprite.svg" location we use "#" and then name of the specific icon in that file
+
+MASK	- Things To Remember!
+	
+	*	mask feature can only be used in newer browsers, like so:
+
+		background-color: #000;
+		-webkit-mask-image: url(./...);
+		-webkit-mask-size: cover;
+	*	outcome is a clipped svg icon that has a color of the background
+
+	*	make an overlay for background-image:
+		
+		background-image: linear-gradient(rgba(color1, .5), rgba(color1, .5)), url(img);

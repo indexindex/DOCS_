@@ -1,0 +1,40 @@
+p {
+    font-size: 20px;
+}
+
+span {
+    font-size: 5em;  /*= 100px because em is doing 20px * 5*/
+}
+
+/*em is good when you want to change paragraph px value, 
+so it will automatically calculate em*/
+
+/*rem however, takes value from html and if your rem is 2 
+then it's going to be twice as big for a paragraph*/
+
+/*  CSS grid
+    You make a div class, let's say container and add all material you want into it
+*/
+
+/*Completely responsive*/
+.container {
+    display: grid; /*Declares grid but nothing else*/
+    grid-gap: 20px; /*Defines how much space you want around your stuff*/
+    /* grid-template-columns: 1fr 1fr 1fr; Most important property, declares columns and */
+    /* says how wide they gonna be, better way to do this is like that...*/
+    /*grid-template-columns: repeat(3, 1fr); Which equals 1fr 1fr 1fr, best way to do responsive
+    look is like that*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: 1fr 2fr; /*Declares rows and
+    says how tall they gonna be*/
+
+    /*  fr means fraction and it is the best way to make responsive columns,
+        1fr 1fr 2fr means that there are 3 columns but 3rd one is taking width of first two.
+    */
+}
+
+/*Define a specific item in a container*/
+.item {
+    grid-column: 1/-1; /*start/end width of an item, this example keeps first item at 100%
+    width all the time when sizeing*/ 
+}

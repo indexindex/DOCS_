@@ -1,0 +1,50 @@
+npm = node pakcage manager
+
+Node.js allows JavaScript to run outside of browsers
+
+Node.js uses V8 engine
+
+check for npm and node:
+* npm -v
+* node -v
+
+Whenever you start a new project, you would like to do:
+
+"npm init" (creates pakcage.json file in your directory)
+
+npm let's you install pakcages two ways: 1. globally, 2. locally
+
+
+
+with 'Browserify' we can now make a bundle, like so:
+cmder = "broswrify script.js > bundle.js"
+
+!NOTE: you have to do "broswrify script.js > bundle.js" every time you change your script.js file.
+
+!NOTE: you never put node_modules folder in your github repo, you only need pakcage.json file.
+
+To get all the dependencies back in your project you just do "npm install" 
+and node_modules folder will be installed just like it was before.
+
+
+
+"npm run test" !test is described in pakcage.json file, in section "scripts". This stands
+for pakcage.json file commands, we can assign "build" command that will do the:
+"broswrify script.js > bundle.js" for us with just typing this command: "npm run build".
+Also we can add "live-server" to that "build" command, see it in pakcage.json file.
+
+
+
+pakcage.json versioning
+example: "package": "^1.5.1",
+
+^ - we accept patch and minor updates
+~ - accepts only patch releases
+* - accept all versions
+// first indicates major version - huge new release with breaking changes
+// second indicates minor version - includes new features but not breaking changes
+// last one indicates patch version - only for bugfixes
+
+npm outdated - shows outdated packages in terminal as a table
+npm update package - updates that package
+npm uninstall package - uninstall that package

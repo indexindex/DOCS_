@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+</head>
+<body>
+  <div>
+      <form method="GET">  <!--  usually we use POST  -->
+        First Name: <input type="text" name="firstname"><br>
+        Last Name: <input type="text" name="lastname"><br>
+        Email: <input type="email" name="email" required><br>
+        Password: <input type="password" name="password" minlength="5"><br>
+        Birthday: <input type="date" name="birthday"><br>
+        Gender:<br>
+        <input type="radio" name="gender" value="male">Male<br>
+        <input type="radio" name="gender" value="female">Female<br>
+        <input type="radio" name="gender" value="other">Other<br>
+        Pets:<br>
+        <input type="checkbox" name="cat"> Cat<br>
+        <input type="checkbox" name="dog"> Dogs<br>
+        Cars:<br>
+        <select name="cars">  <!--  you can select attribute "multiple", that let's you select multiple values  -->
+          <option value="porsche" name="porsche">911</option>
+          <option value="audi" name="audi">R8</option>
+        </select><br>
+        <input type="submit" value="Register!">
+        <input type="reset">
+      </form>
+  </div>
+</body>
+</html>
+
+<!--  form information  -->
+?
+firstname=Andri
+&lastname=Suvorov
+&email=andrisuvorov%40gmail.com
+&password=123456789
+&birthday=1997-12-04
+&gender=male
+&cars=porsche
+
+
+
+<!--  div tag is a division tag (block element)  -->
+<div></div>
+
+<!--  span tag (inline element)  -->
+<!--  used for styling one specific line  -->
+<span></span>
+
+
+
+<!--  new html structure that helps machines read your website better  -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
+</head>
+<body>
+      <header>
+            <h1>Register</h1>
+      </header>
+      <nav>
+            <a href="www.google.com"></a>
+      </nav>
+      <footer>
+        <p>Website made with love</p>
+      </footer>
+</body>
+</html>

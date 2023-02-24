@@ -1,0 +1,3 @@
+PATH=%PATH%;C:\Program Files\PostgreSQL\12\bin
+
+or now i can just use command "psql -U postgres" because i have declared an environmental varaible path.

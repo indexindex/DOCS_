@@ -1,0 +1,41 @@
+/*  New properties  */
+
+
+
+/*  Transition  */
+
+img {
+    transition: all 1s;  /*  img will have transition for 1s when 
+    an action is taken on image  */
+}
+
+/*  Transform  */
+
+img:hover {
+    transform: scale(1.1);  /*  transition 1s will be done when 
+    image is hovered on & transform effect will be an image scaling (growing)  */
+}
+
+/*  Animation  */
+
+/*  !Animation is also new property of CSS3  */
+
+
+
+/*  Browser -prefixes-  */
+
+/*  They are basically made for testing new properties in a browser 
+    that has not itself yet implemented those new features, so it's more 
+    like a test yourself ability. Prefix let's you test new css properties
+    in a browser that itself does not have those prefixes set up yet  */
+
+/*  box-shadow example with -prefixes-  */
+
+h1 {
+    -moz-box-shadow: 4px 4px 5px #888888;  /*  mozilla -prefix-  */
+    -ms-box-shadow: 4px 4px 5px #888888;  /*  internet explorer -prefix-  */
+    -webkit-box-shadow: 4px 4px 5px #888888;  /*  safari & chrome -prefix-  */
+    -o-box-shadow: 4px 4px 5px #888888;  /*  opera -prefix-  */
+    box-shadow: 4px 4px 5px #888888;  /*  original look (you also had to define 
+    this property with all -prefixes-)  */
+}

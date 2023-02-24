@@ -1,0 +1,54 @@
+// Source Control (a way to control/manage files somewhere in a specific location where they are stored)
+
+PUSHING FILES
+
+On a Github you can share your repository files by clicking on a 
+"Clone or download" button and from upper-right corner changing to HTTPS. 
+After that you will get a link that you can share with teammates;
+
+now in Command Prompt you go to your folder with files;
+
+and in that location you type in "git clone https://...";
+
+you cloned the repository to your folder and now you drag files in there;
+
+we have to access the repository folder and we should get 
+(master=) to the right of our folder directory;
+
+to sync my files to Github i have to check my status first 
+"git status" and we get notification "Untracked files" - these are the files 
+that are not synced yet;
+
+now we need to add them to Github repository: 
+"git add index.html";
+"git add style.css";
+"git add script.js";
+
+doing "git status" again we can see our files that have been added to branch 
+and we have new notification "Changes to be committed" - that means we have to commit files;
+
+next command will be "git commit -m"adding starting project"" 
+to commit files to Github repository and give that commit a message;
+
+finally we have to push those changes to our repository by giving command "git push".
+
+GETTING FILES
+
+Now in Command Prompt you go to your folder where you want files to be;
+
+you do "git clone https://..." and you cloned the project to your folder;
+
+now that you have downloaded the cloned repository and made some changes to 
+files, you can go into that repository and do "git status" to see modified files;
+
+and now that even if we have many files that we want to commit, then we can do it like so:
+"git add .";
+
+"git commit -m"changing title";
+
+"git push".
+
+GIT PULL
+
+"git pull" will update your code and even show changes made while the 
+file is open in your text editor.

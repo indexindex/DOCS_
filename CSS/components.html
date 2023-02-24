@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Responsive images -->
+    <picture>
+        <source srcset="img/image-1.jpg 1x, img/image-2.jpg 2x" media="(max-width: 37.5em)">
+        <img srcset="img/image-1.jpg 1x, img/image-2.jpg 2x" alt="logo" src="img/default-image.jpg">
+    </picture>
+    <!-- apply <source> images if media is less than 600px, apply <img> images if media is more than 600px -->
+    <!-- each srcset has 2 options to choose image px density (according to the display) -->
+    <!-- src will be applied if no other options are selected (default image) -->
+
+</body>
+</html>

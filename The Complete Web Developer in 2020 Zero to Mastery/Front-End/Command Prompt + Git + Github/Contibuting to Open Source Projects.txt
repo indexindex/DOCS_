@@ -1,0 +1,20 @@
+Go to Project Repository;
+
+fork the repository;
+
+clone the repository;
+
+read instructions on repository about getting started with projects;
+
+ideally we create our own branch to work with, 
+so for best practice you should make it;
+
+you can now work with project and if you have all set and ready, then...;
+
+do a pull request (master origin mybranch);
+
+both master branch and forked branch now have pull requests in Github;
+
+create a pull request (comment/describe something in a request);
+
+after request have been approved you can delete your branch.

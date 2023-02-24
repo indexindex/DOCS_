@@ -1,0 +1,57 @@
+// Commands for Command Prompt
+
+dir // lists everything that is located at current directory
+
+cd // opens directory in which you are right now
+
+
+
+cd Desktop // you go to a Desktop directory
+
+ls // if you are at Desktop then ls shows everything located at Desktop
+
+cd.. // goes backwards one step (Backspace)
+
+cls // clears whole terminal
+
+
+
+cd / // takes you to root directory (C:\)
+
+ls // now lists all root directory folders of PREDATOR
+
+
+
+cd Desktop/test // goes to Desktop and into folder named test
+
+start . // opens folder window
+
+mkdir webapp // creates new folder in that directory called webapp
+
+ls // now shows webapp
+
+cd webapp // we accessed webapp folder
+
+echo > index.html // creates html file inside the folder
+
+start index.html // opens the html file (in browser)
+
+code // opens Visual Studio Code
+
+code -n // opens VSC fresh page
+
+code index.html // opens VSC and index.html
+
+
+
+rename index.html about.html // renames index.html to about.html
+
+del about.html // now deletes about.html
+
+rmdir /s "C:\..." // deletes folder in specified location
+
+move test "C:\..." // moves folder to specified location
+
+move text.txt "C:\..." // moves txt file to specified location
+
+robocopy "C:\..." "C:\..." /e // copies folder from one location to another with all files and subfolders

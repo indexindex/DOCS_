@@ -1,0 +1,16 @@
+Adobe Illustrator Notes
+
+*	For PRINT specific illustrations use these settings while making a new document: 
+		*	Set 'Color Mode' to CMYK;
+		*	Set 'Raster Effects' to High (300 ppi);
+		*	Set 'Bleed' according to needs (golden standard: 3mm);
+		*	!NB When working with text it is reasonable to convert it to outlines, 
+			that way it won't cause errors while printing.
+
+*	For WEB specific illustrations use these settings while making a new document: 
+		*	Set 'Color Mode' to RGB;
+		*	Set 'Raster Effects' to Screen (72 ppi);
+		*	No 'Bleed' required.
+
+*	When sending Adobe file to somebody, make sure to outline your text, the other person might
+	not have that font on their computer, when text is outlined we have only vector left, not the font-based text.

@@ -1,0 +1,39 @@
+Working with branches
+
+PRO TIP: don't work on master branch, always have your own branch just for case.
+
+"git branch" shows you which branch are you working with;
+
+"git branch myownbranch" i am creating a new branch named myownbranch;
+
+"git branch" now shows two branches but master is still in use;
+
+"git checkout myownbranch" will switch you over to myownbranch;
+
+"git checkout -b test" you logout of master branch (by default) and create new named test;
+
+after commit and push, we can go to Github and in section "Pull requests" we can see
+our requests that if accepted by other teammates can be merged with master branch.
+
+
+
+
+"git merge master" get everything that is in master branch to your own branch;
+
+you may get merge conflict and in HTML document you may see something like this:
+<<<<<< HEAD // we removed <h1> tag in our branch but
+======
+    <h1>Tag</h1>
+>>>>>> master // shows that in master there is <h1> tag;
+
+if we want to leave <h1> tag as was in master branch then 
+we just remove the indication lines;
+
+"git diff" shows in terminal what changes have been added
+
+add + commit + push;
+
+"git push origin myownbranch" you may get an error while trying to push 
+to master when theres nothing new to add. For that you use the command above;
+
+finally in Github you will have your branch showing pull request.
