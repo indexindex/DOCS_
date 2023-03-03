@@ -50,110 +50,54 @@ profile;
 
 
 
-// update existing property
+// TODO: UPDATE OBJECT PROPERTY
 
-// option 1
-userReviews['Agatha'] = 1.0;
+// * for updating our object we have two ways:
 
-// option 2
-userReviews.Sophie = 3.0;
+// * updating with '[]' syntax
+profile['name'] = 'Maria';
 
-/* return userReviews {
-    Agatha: 1.0,
-    Sophie: 3.0
-}
-*/
+// * updating with '.' syntax
+profile.age = 23;
 
-// --- --- --->
+profile;
+// ? return value: { name: "Maria", age: 23 }
 
-// Nested array object
-const student = {
-    firstName: "Agatha",
-    lastName: "Beyond",
-    strengths: [ 'Magic', 'Smile' ],
-    exams: {
-        midterm: 92,
-        final: 88
-    } 
-};
 
-// access Smile
-student.strengths[1]
 
-// EXERCISE
+// TODO: OBJECT NESTING
 
-// Grab midterm + final and / by 2;
-const avg = (student.exams.midterm + student.exams.final) / 2;
-
-// --- --- --->
-
-// array of objects
-const shoppingCart = [
-    {
-        product: 'MSI laptop',
-        price: 3.500,
-        quantity: 1
-    },
-    {
-        product: 'MSI laptop',
-        price: 3.500,
-        quantity: 1
-    },
-    {
-        product: 'MSI laptop',
-        price: 3.500,
-        quantity: 1
+// * object can grow nested and store all sorts of values
+const article = {
+    title: 'Most Used REST API Authentication Methods & Strategies',
+    likes: 556,
+    labels: ['#python', '#authentication', '#rest-api', '#oauth', '#authorization'],
+    content: {
+        subTitle: 'Learn all about REST API authentication, authentication types in...',
+        text: 'REST APIs are a powerful tool for developers, allowing them to quickly and easily access data and services.'
     }
-];
-
-// --- --- --->
-
-// conditional when [] is empty
-const user = {
-    username: 'Agatha',
-    email: 'agatha@gmail.com',
-    notifications: []
 }
 
-// method 1
-if (user.notifications.length === 0) {
-    console.log('No New Notifications!');
-}
 
-// method 2
-if (!user.notifications.length) { // length gives me 0, ! says, if there is no length then return following...
-    console.log('No New Notifications!');
-}
 
-// --- --- --->
 // TODO: SHORTHAND OBJECT PROPERTIES
 
-// * old way of assigning value to object key
+// * get max/min/sum/avg from an array of numbers
 const getStats = (arr) => {
     const max = Math.max(...arr);
     const min = Math.min(...arr);
-    const sum = arr.reduce((sum, r) => sum + r);
+    const sum = arr.reduce((prevValue, currValue) => prevValue + currValue);
     const avg = sum / arr.length;
-    return {
-        max: max,
-        min: min,
-        sum: sum,
-        avg: avg
-    }
-    // * newer way is that we can leave off same name values:
-    /*
-    return {
-        max,
-        min,
-        sum,
-        avg
-    }
-    */
+    return { max, min, sum, avg }; // * is equivalent to: max: max, min: min, sum: sum, avg: avg
 }
 
-const reviews = [4.5, 5.0, 3.44, 2.8, 3.5, 4.0, 3.5];
-
+const numbers = [10, 20, 30, 40, 50, 60, 70, 80];
 const stats = getStats(reviews);
+
+
+
+
+
 
 // --- --- --->
 // TODO: COMPUTED PROPERTIES
