@@ -1,7 +1,8 @@
 // TODO: OBJECTS
 
 /*
-   * 
+   * Objects are collections of properties. They are good because 
+   * we can have properties, which define their characteristics.
 */
 
 // * simple mixed value object
@@ -9,7 +10,7 @@ const fitnessData = {
     totalSteps: 10000,
     totalMiles: 5,
     avgCalorieBurn: 800,
-    workoutThisWeek: '3 of 4',
+    workoutsThisWeek: '3 out of 4',
     avgGoodSleep: '7:00h'
 }
 
@@ -17,7 +18,7 @@ const fitnessData = {
 
 // TODO: OBJECT ACCESS
 
-// * Accessing an object property that has not been defined will result with "undefined".
+// * accessing an object property that has not been defined will result with "undefined".
 
 // * access object key value with . syntax
 fitnessData.totalMiles;
@@ -52,13 +53,13 @@ profile;
 
 // TODO: UPDATE OBJECT PROPERTY
 
-// * for updating our object we have two ways:
-
-// * updating with '[]' syntax
-profile['name'] = 'Maria';
+// * to update our object we have two ways:
 
 // * updating with '.' syntax
-profile.age = 23;
+profile.name = 'Maria';
+
+// * updating with '[]' syntax
+profile['age'] = 23;
 
 profile;
 // ? return value: { name: "Maria", age: 23 }
@@ -88,95 +89,67 @@ const getStats = (arr) => {
     const min = Math.min(...arr);
     const sum = arr.reduce((prevValue, currValue) => prevValue + currValue);
     const avg = sum / arr.length;
-    return { max, min, sum, avg }; // * is equivalent to: max: max, min: min, sum: sum, avg: avg
+    return { max, min, sum, avg }; // * is equal to: max: max, min: min, sum: sum, avg: avg
 }
 
 const numbers = [10, 20, 30, 40, 50, 60, 70, 80];
-const stats = getStats(reviews);
+const stats = getStats(numbers);
+stats;
+// ? return value: { max: 80, min: 10, sum: 360, avg: 45 }
 
 
 
+// TODO: ASSIGN COMPUTED PROPERTIES
 
-
-
-// --- --- --->
-// TODO: COMPUTED PROPERTIES
-
-// * to assign role to person we would do it this way:
+// * assign role to person
 const role = 'host';
-const person = 'Agatha';
+const person = 'Andri';
 
-const team = {};
-team[role] = person;
-// {host: "Agatha"}
+const team = { [role]: person }
+team;
+// ? return value: { host: "Andri" }
 
-// * newer way of this would look like so:
-const team = {
-    [role]: person
-}
-// {host: "Agatha"}
 
-// * return added property (old way)
-function addProp(obj,k,v) {
-    const copy = {...obj};
-    copy[k] = v;
-    return copy;
+
+// TODO: ASSIGN & RETRIEVE COMPUTED PROPERTIES
+
+const addProp = (obj, key, value) => {
+    // * spread object into new one and assign new value
+    return { ...obj, [key]: value };
 }
 
-const res = addProp(team, 'happy', ':)');
-// {
-//  host: "Agatha",
-//  happy: ":)"
-// }
+const currentUser = addProp(team, 'logged', true);
+currentUser;
+// ? return value: { host: "Andri", logged: true }
 
-// * return added property (new way)
-function addProp(obj,k,v) {
-    return {...obj, [k]: v};
-}
 
-const res = addProp(team, 'happy', ':)');
-// {
-//  host: "Agatha",
-//  happy: ":)"
-// }
 
-// --- --- --->
 // TODO: ADDING METHODS TO OBJECTS
 
-const add = function(x, y) {
-    return x + y;
-}
-
-// * we declare an object and use "add" as a key and value
+// * key names here are actually functions
 const math = {
-    add
-}
-// * we can now call the function in two ways:
-add(5,5);
-// 10
-
-// * or
-math.add(5,5);
-// 10
-
-// * but a better way is to define function as a value for object key
-const math = {
-    add: function(x, y) {
-        return x + y;
-    },
-    multiply: function(x, y) {
-        return x * y;
-    }
+    add(x, y) { return x + y; },
+    multiply(x, y) { return x * y; }
 }
 
-// --- --- --->
-// TODO: METHOD SHORTHAND SYNTAX
+math.add(2, 5);
+// ? return value: 7
 
-// * we now can have a function name as a key
-const auth = {
-    login() {
-        console.log("logged you in!");
-    }
-}
-auth.login
-// "logged you in!"
+math.multiply(2, 5);
+// ? return value: 10
+
+
+
+// TODO: REFERENCE IN MEMORY
+
+const object1 = { value: 25 };
+const object2 = object1;
+const object3 = { value: 25 };
+
+// * pointing to the same reference in memory
+object1 === object2;
+// ? return value: true
+
+// * "object3" is a new reference in memory, despite looking identical to "object1"
+object1 === object3;
+// ? return value: false

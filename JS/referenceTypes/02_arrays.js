@@ -90,6 +90,7 @@ const array1 = ['data1', 'data2'];
 const array2 = ['data3', 'data4'];
 
 const combinedArray = array1.concat(array2);
+combinedArray;
 // ? return value: ["data1", "data2", "data3", "data4"]
 
 
