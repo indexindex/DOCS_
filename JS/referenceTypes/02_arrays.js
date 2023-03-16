@@ -184,3 +184,16 @@ const myLetters = ['C', 'E', 'B', 'A', 'D'];
 // * alphabetical sort
 myLetters.sort();
 // ? return value: ["A", "B", "C", "D", "E"]
+
+
+
+// TODO: USEFUL IMPLEMENTATIONS
+
+// * remove a specific item from an array
+const array = ['item1', 'item2', 'item3', 'item4', 'item5'];
+let item = 'item3';
+let index = array.indexOf(item);
+
+if (index !== -1) { array.splice(index, 1); }
+array;
+// ? return value: [ "item1", "item2", "item4", "item5" ]

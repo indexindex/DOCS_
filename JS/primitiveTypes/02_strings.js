@@ -115,6 +115,12 @@ greeting.trim().toUpperCase();
 'ran across the river'.replace('river', 'field');
 // ? return value: "ran across the field"
 
+// * replaceAll()
+
+// * replace words with new words (replaces all word matches)
+'123 456 789'.replaceAll(' ', '');
+// ? return value: "123456789"
+
 // * parseInt()
 
 // * convert string number into actual number
