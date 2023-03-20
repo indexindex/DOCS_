@@ -8,4 +8,5 @@
     * easily replaced with dynamic data.
 */
 
-// * example of a placeholder in "HTML" template
+// * example of a placeholder in "HTML" template:
+<h1>{_PLACEHOLDER_}</h1>

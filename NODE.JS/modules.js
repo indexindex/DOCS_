@@ -149,8 +149,12 @@ const { query, pathname } = url.parse(req.url, true);
     * Keep in mind that importing our own modules must come
     * after the core modules.
     * 1. Core modules, 2. 3rd party modules, 3. Our modules.
+    * "module.exports" is used when we want to export single value.
 */
 module.exports = () => {};
+
+// * when exporting many functions, we can use a following syntax:
+exports.myFunction = () => {};
 
 // * there is no need to specify ".js" in the end
 require('./modules/myModule');
