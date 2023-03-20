@@ -8,10 +8,9 @@
     * Node.js supports all ES features as it is not bound to browser support, it has it's own environment.
     * To exit Node.js environment, write ".exit".
 */
-
-const name = 'andri';
+const name = 'Andri';
 name;
-// ? return value: "andri"
+// ? return value: "Andri"
 
 7 + 3;
 // ? return value: 10

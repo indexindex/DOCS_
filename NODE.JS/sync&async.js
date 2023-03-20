@@ -11,20 +11,21 @@
     * It allows to use non-blocking input/output (I/O) model,
     * which is based on callbacks.
 */
-
 const fs = require('fs');
 
-// * Synchronous (blocking nature)
-
-// * here, code is executed line by line
-const fileInput = fs.readFileSync('./filepath/input.txt', 'utf-8');
+/*
+    * Synchronous (blocking nature).
+    * Code is executed line by line.
+*/
+const fileInput = fs.readFileSync(`${__dirname}/file.txt`, 'utf-8');
 console.log(fileInput);
 
 
 
-// * Asynchronous (non-blocking nature)
-
-// * here, code is executed in the background
-fs.readFile('./filepath/input.txt', 'utf-8', (error, data) => {
+/*
+    * Asynchronous (non-blocking nature).
+    * Code is executed in the background.
+*/
+fs.readFile(`${__dirname}/file.txt`, 'utf-8', (error, data) => {
     console.log(data);
-});
+})
