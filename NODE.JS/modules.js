@@ -4,8 +4,10 @@
     * Each module needs to be included with "require" function.
     * We store the module to a variable, which can be used to call 
     * out different functions of that module.
-    * In fact, each file in NODE.JS is treated as a module.
+    * In fact, each file in Node.js is treated as a module.
 */
+
+// ? this code is only an example
 const module = require('module');
 module.someFunction();
 
@@ -15,8 +17,9 @@ module.someFunction();
 
 const fs = require('fs');
 
-// * readFileSync
 /*
+    * readFileSync
+
     * Synchronous way to read file content.
     * Accepts 2 arguments: path to file and character encoding.
 */
@@ -26,8 +29,9 @@ console.log(fileInput);
 
 
 
-// * readFile
 /*
+    * readFile
+
     * Asynchronous way to read file content.
     * Accepts 3 arguments: path to file, character encoding and callback function.
     * Callback function has 2 arguments: "error" and "data", 
@@ -42,8 +46,9 @@ fs.readFile('./filepath/input.txt', 'utf-8', (error, data) => {
 
 
 
-// * writeFileSync
 /*
+    * writeFileSync
+
     * Synchronous way to write file content.
     * Accepts 2 arguments: path to file and text we want to write.
 */
@@ -59,8 +64,9 @@ console.log(textOutput);
 
 
 
-// * writeFile
 /*
+    * writeFile
+
     * Asynchronous way to write file content.
     * Accepts 4 arguments: path to file, text we want to write, character encoding and callback function.
     * As there is no data to return, we only get callback if there was an error with the process.
@@ -102,12 +108,14 @@ server.listen(8000, '127.0.0.1', () => {
 
 // TODO: URL MODULE
 
-// * helps to format url parameters into object with values
+/*
+    * This module helps format url parameters into object with values.
+    * We can parse full length url into variable pieces.
+    * ".parse()" has 2 arguments: server url and "true", which will parse query into an object.
+    * Query string could be noted as: "?id=0"
+*/
 const url = require('url');
 
-// * we can parse full length url into variable pieces
-// * "true" is passed as a second parameter to parse query into an object
-// * query string could be "?id=0"
 url.parse(req.url, true);
 
 // * let's imagine our request url being "/product?id=0"
@@ -129,7 +137,6 @@ url.parse(req.url, true);
     ?      href: "/product?id=0"
     ?    }
 */
-
 /*
     * Now we get access to "query" and "pathname".
     * We can destructure these fields to variables.
