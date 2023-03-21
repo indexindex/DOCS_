@@ -23,7 +23,7 @@ const fs = require('fs');
     * Synchronous way to read file content.
     * Accepts 2 arguments: path to file and character encoding.
 */
-const fileInput = fs.readFileSync('./filepath/input.txt', 'utf-8');
+const fileInput = fs.readFileSync(`${__dirname}/input.txt`, 'utf-8');
 console.log(fileInput);
 // ? example return value: "game-changing"
 
@@ -39,7 +39,7 @@ console.log(fileInput);
     * Callback only runs when the process of reading a file has been finished,
     * after that we get access to "error" and "data".
 */
-fs.readFile('./filepath/input.txt', 'utf-8', (error, data) => {
+fs.readFile(`${__dirname}/input.txt`, 'utf-8', (error, data) => {
     console.log(data);
     // ? example return value: "game-changing"
 });
@@ -54,7 +54,7 @@ fs.readFile('./filepath/input.txt', 'utf-8', (error, data) => {
 */
 const textOutput = `Learning Node.js is ${fileInput}.\nCreated on ${Date.now()}`;
 
-fs.writeFileSync('./filepath/output.txt', textOutput);
+fs.writeFileSync(`${__dirname}/output.txt`, textOutput);
 console.log(textOutput);
 /*
     ? return value:
@@ -71,8 +71,20 @@ console.log(textOutput);
     * Accepts 4 arguments: path to file, text we want to write, character encoding and callback function.
     * As there is no data to return, we only get callback if there was an error with the process.
 */
-fs.writeFile('./filepath/output.txt', textOutput, 'utf-8', error => {
+fs.writeFile(`${__dirname}/output.txt`, textOutput, 'utf-8', error => {
     console.log('file has been written');
+})
+
+
+
+/*
+    * appendFile
+
+    * Asynchronous way to append content to the file.
+    * Accepts 4 arguments: path to file, text we want to add, character encoding and callback function.
+*/
+fs.appendFile(`${__dirname}/output.txt`, ' added text', 'utf-8', error => {
+    console.log('file has been updated');
 })
 
 
