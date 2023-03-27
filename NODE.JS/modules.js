@@ -89,6 +89,18 @@ fs.appendFile(`${__dirname}/output.txt`, ' added text', 'utf-8', error => {
 
 
 
+/*
+    * unlink
+
+    * Asynchronous way to delete a file.
+    * Accepts 2 arguments: path to file and callback function.
+*/
+fs.unlink(`${__dirname}/output.txt`, error => {
+    console.log('file has been deleted');
+})
+
+
+
 // TODO: HTTP MODULE
 
 const http = require('http');
@@ -96,10 +108,11 @@ const http = require('http');
 /*
     * "http" gives access to networking capabilities.
     * We can make a simple server with two steps: "createServer" and "listen".
+    * 
     * "createServer" has a callback that will run each time it gets hit with incoming request.
     * Callback has 2 arguments, "request" and "response" objects,
     * "response" object is what we can use to send back data to client-side.
-    * ".end()" is the simmplest way to send back data, plain text.
+    * ".end()" is the simplest way to send back data, plain text.
 */
 const server = http.createServer((req, res) => {
     res.end('Hello from the server-side!');
@@ -123,6 +136,7 @@ server.listen(8000, '127.0.0.1', () => {
 /*
     * This module helps format url parameters into object with values.
     * We can parse full length url into variable pieces.
+    * 
     * ".parse()" has 2 arguments: server url and "true", which will parse query into an object.
     * Query string could be noted as: "?id=0"
 */
@@ -168,14 +182,14 @@ const { query, pathname } = url.parse(req.url, true);
     * Keep in mind that importing our own modules must come
     * after the core modules.
     * 1. Core modules, 2. 3rd party modules, 3. Our modules.
-    * "module.exports" is used when we want to export single value.
+    * "module.exports" is used when we want to export a single value.
 */
 module.exports = () => {};
 
 // * when exporting many functions, we can use a following syntax:
 exports.myFunction = () => {};
 
-// * there is no need to specify ".js" in the end
+// * there is no need to specify ".js" in the end when requiring a module
 require('./modules/myModule');
 
 /*
@@ -185,3 +199,4 @@ require('./modules/myModule');
     * we required.
 */
 const customBuild = require('./modules/myModule');
+customBuild.doSomething();
