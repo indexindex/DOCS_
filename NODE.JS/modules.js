@@ -140,7 +140,7 @@ server.listen(8000, '127.0.0.1', () => {
     * ".parse()" has 2 arguments: server url and "true", which will parse query into an object.
     * Query string could be noted as: "?id=0"
 */
-const url = require('url');
+const { URL } = require('url');
 
 url.parse(req.url, true);
 

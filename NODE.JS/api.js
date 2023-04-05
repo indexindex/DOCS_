@@ -1,6 +1,7 @@
 // TODO: WEB API
 
 /*
+    * 'A'pplication 'P'rogramming 'I'nterface.
     * Basically a service, from which we can request some data.
     * For example, data which was requested for a current page or product.
     * API works with "JSON" format, when request comes in, it returns "JSON" response.
@@ -42,3 +43,41 @@ const server = http.createServer((req, res) => {
 server.listen(8000, '127.0.0.1', () => {
     console.log('server has started on port 8000');
 })
+
+
+
+// TODO: REST API
+
+/*
+    * Most used API architecture.
+    * "REST" stands for: "Representational state transfer",
+    * they are made in a logical way, making them easy to consume.
+    * To build a good "REST API", we should:
+    *        Separate API into logical resources;
+    *        Resources should then be exposed (made available)
+    *        using structured resource-based URLs;
+    *        Use HTTP modules and not the URL for interactions;
+    *        Data that is sent back to the client, should be in
+    *        JSON format;
+    *        Must be stateless.
+
+    * Resource could be anything that can be named.
+    * In our url, we should perform resource operations
+    * depending on method, we should not use something like this:
+    * "/getMembers", we should make a "GET" request to "/members".
+    * "/members" is a resource and "GET" is HTTP method.
+
+    * "GET" is used to "Read" a resource.
+    * "POST" is used to "Create" a resource.
+    * "PUT" or "PATCH" is used to "Update" a resource.
+    * "PUT" expects the whole object and "PATCH" only the updated part.
+    * "DELETE" is used to "Delete" a resource.
+
+    * REST API should contain all these methods and
+    * client should be able to perform all these operations.
+    * There is even a short term for it "CRUD", which stands for:
+    * "Create", "Read", "Update", "Delete".
+
+    * Server should never have to remember previous request,
+    * in order to process the current response.
+*/
