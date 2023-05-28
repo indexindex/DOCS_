@@ -8,7 +8,7 @@
 
     * Using "./" to specify our path might not always work as we expect, it points to
     * current folder, which could eventually be located in another environment.
-    * To be more specific while defining our paths, we can use Node.js built-in variable
+    * To be more specific while defining our paths, we can use node.js built-in variable
     * "__dirname", which specifies where the current file is really located.
 */
 
@@ -54,11 +54,9 @@ server.listen(8000, '127.0.0.1', () => {
     * they are made in a logical way, making them easy to consume.
     * To build a good "REST API", we should:
     *        Separate API into logical resources;
-    *        Resources should then be exposed (made available)
-    *        using structured resource-based URLs;
+    *        Resources should then be exposed (made available) using structured resource-based URLs;
     *        Use HTTP modules and not the URL for interactions;
-    *        Data that is sent back to the client, should be in
-    *        JSON format;
+    *        Data that is sent back to the client, should be in "JSON" format;
     *        Must be stateless.
 
     * Resource could be anything that can be named.
