@@ -5,18 +5,20 @@
     * Basically a service, from which we can request some data.
     * For example, data which was requested for a current page or product.
     * API works with "JSON" format, when request comes in, it returns "JSON" response.
-
-    * Using "./" to specify our path might not always work as we expect, it points to
-    * current folder, which could eventually be located in another environment.
-    * To be more specific while defining our paths, we can use node.js built-in variable
-    * "__dirname", which specifies where the current file is really located.
 */
 
+// ? CODE EXPLANATION --->
 const fs = require('fs');
 const http = require('http');
 
 const data = fs.readFileSync(`${__dirname}/data.json`, 'utf-8');
 const dataObj = JSON.parse(data); // * parse "JSON" to JS object
+/*
+    * Using "./" to specify our path might not always work as we expect, it points to
+    * current folder, which could eventually be located in another environment.
+    * To be more specific while defining our paths, we can use node.js built-in variable
+    * "__dirname", which specifies where the current file is really located.
+*/
 
 /*
     * To send back "JSON" data as a string, we need to specify headers accordingly.
@@ -43,6 +45,29 @@ const server = http.createServer((req, res) => {
 server.listen(8000, '127.0.0.1', () => {
     console.log('server has started on port 8000');
 })
+// ? CODE EXPLANATION <---
+
+// ? CODE --->
+const fs = require('fs');
+const http = require('http');
+
+const data = fs.readFileSync(`${__dirname}/data.json`, 'utf-8');
+const dataObj = JSON.parse(data);
+
+const server = http.createServer((req, res) => {
+    const pathName = req.url;
+
+    if (pathName === '/api') {
+        res.writeHead(200, { 'Content-type': 'application/json' });
+        res.end(data);
+        console.log(dataObj);
+    }
+})
+
+server.listen(8000, '127.0.0.1', () => {
+    console.log('server has started on port 8000');
+})
+// ? CODE <---
 
 
 
@@ -50,18 +75,18 @@ server.listen(8000, '127.0.0.1', () => {
 
 /*
     * Most used API architecture.
-    * "REST" stands for: "Representational state transfer",
+    * "REST" stands for: "Representational State Transfer",
     * they are made in a logical way, making them easy to consume.
-    * To build a good "REST API", we should:
-    *        Separate API into logical resources;
-    *        Resources should then be exposed (made available) using structured resource-based URLs;
-    *        Use HTTP modules and not the URL for interactions;
-    *        Data that is sent back to the client, should be in "JSON" format;
-    *        Must be stateless.
+    * To build a good REST API, we should:
+    *    Separate API into logical resources;
+    *    Resources should then be exposed (made available) using structured resource-based URLs;
+    *    Use HTTP modules and not the URL for interactions;
+    *    Data that is sent back to the client, should be in "JSON" format;
+    *    Must be stateless.
 
     * Resource could be anything that can be named.
-    * In our url, we should perform resource operations
-    * depending on method, we should not use something like this:
+    * Resource operations on url should be performed depending
+    * on method, we should not use something like this:
     * "/getMembers", we should make a "GET" request to "/members".
     * "/members" is a resource and "GET" is HTTP method.
 

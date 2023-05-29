@@ -142,7 +142,7 @@ server.listen(8000, '127.0.0.1', () => {
 */
 const { URL } = require('url');
 
-url.parse(req.url, true);
+const reqURL = new URL(req.url, `http://${req.headers.host}`);
 
 // * let's imagine our request url being "/product?id=0"
 // * ".parse()" will return something like this:
