@@ -1,4 +1,4 @@
-// Loops
+// TODO: LOOPS
 
 var todos = [
     "clean room",

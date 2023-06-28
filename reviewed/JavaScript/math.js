@@ -2,7 +2,7 @@
 
 /*
    * In JS we have a "Math" object that has properties and methods for mathematical 
-   * constants and functions. 
+   * constants and functions.
    * "Math" works with "Number" type values.
 */
 

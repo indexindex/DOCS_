@@ -2,7 +2,7 @@
 
 /*
     * To start writing Node.js in the console we just have to type "node".
-    * After previous command we now get ">" before each new command, 
+    * After previous command, we now get ">" before each new command, 
     * indicating that we are working with Node.js REPL (read, eval, print, loop).
     * With REPL, we can now write usual JS in the console.
     * Node.js supports all ES features as it is not bound to browser support, it has it's own environment.
@@ -10,7 +10,7 @@
 */
 const name = 'Andri';
 name;
-// ? return value: "Andri"
+// ? return value: 'Andri'
 
 7 + 3;
 // ? return value: 10
@@ -34,6 +34,7 @@ _ - 30;
 // TODO: RUNNING A FILE
 
 // * example file called "index.js", executed with command "node index.js"
+// ? must be called outside of "node REPL"
 const hello = 'Hello world!';
 console.log(hello);
-// ? return value: "Hello world!"
+// ? return value: Hello world!
