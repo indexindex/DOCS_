@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .subject__labels--label {
+            background-color: yellowgreen;
+            padding: 6px;
+            border-radius: 10px;
+            width: fit-content;
+        }
+
+        /* 1 Tab = 5 spaces */
+
+        /* const, new */
+        .keyword {
+
+        }
+        /* =, => */
+        .operator {
+
+        }
+        /* Promise */
+        .class-name {
+
+        }
+        /* () {} , ;  */
+        .punctuation {
+
+        }
+        /* resolve, reject */
+        .parameter {
+
+        }
+        /* resolve(), reject() */
+        .function {
+
+        }
+    </style>
+
+    <article class="subject">
+        <h1>Promise</h1>
+        <div class="subject__labels">
+            <p class="subject__labels--label">Asynchronous JavaScript</p>
+            <p class="subject__labels--label">ES6</p>
+        </div>
+
+        <p class="subject__description">
+            Promises are a new feature in JavaScript (ES6).<br>
+            <code>Promise</code> is a JavaScript object which represents the completion or failure of some eventual process,
+            a single value that can be produced sometime in the future, either a resolved value, or unresolved (rejected) value.
+            A good theoretical example of <code>Promise</code> would be a scenario,
+            where we promise a value that we don't have at the moment but hope that this value would eventually come, 
+            which also points that Promises can take time.<br>
+            <code>Promise</code> usually has 2 parameter functions <code>resolve()</code> and <code>reject()</code>, their
+            basic function is to either set the promise status to 'resolved' or 'rejected', the default value is always 'pending'.
+        </p>
+
+        <section class="subject__specific">
+            <h2>Basic example of a <code>Promise</code>:</h2>
+
+            <div class="code-example">
+                <pre><code><span class="code keyword">const</span> myPromise <span class="code operator">=</span> <span class="code keyword">new</span> <span class="code class-name">Promise</span><span class="code punctuation">((</span><span class="code parameter">resolve</span><span class="code punctuation">,</span> <span class="code parameter">reject</span><span class="code punctuation">)</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{});</span></code></pre>
+            </div>
+
+            <p>
+                <code>Promise</code> status will stay 'pending' until we get a value or 
+                as long as we are not calling <code>resolve()</code> or <code>reject()</code>.
+            </p>
+
+            <h2>.THEN & .CATCH methods</h2>
+
+            <p>
+                Every <code>Promise</code> has a <code>.then()</code> and <code>.catch()</code> methods.<br>
+                They will run if a specific parameter function was called.<br>
+                In case of <code>.then()</code>, to run that method we need to call <code>resolve()</code> function.
+            </p>
+
+            <div class="code-example">
+                <pre><code><span class="code keyword">const</span> myPromise <span class="code operator">=</span> <span class="code keyword">new</span> <span class="code class-name">Promise</span><span class="code punctuation">((</span><span class="code parameter">resolve</span><span class="code punctuation">,</span> <span class="code parameter">reject</span><span class="code punctuation">)</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{</span><br>     <span class="code function">resolve</span><span class="code punctuation">();</span><br><span class="code punctuation">}).</span><span class="code function">then</span><span class="code punctuation">(()</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{</span><br>     console<span class="code punctuation">.</span><span class="code function">log</span><span class="code punctuation">(</span><span class="code string">'promise resolved'</span><span class="code punctuation">);</span><br><span class="code punctuation">});</span></code></pre>
+            </div>
+
+            <p>
+                In case of <code>.catch()</code>, to run that method we need to call <code>reject()</code> function.
+            </p>
+
+            <div class="code-example">
+                <pre><code><span class="code keyword">const</span> myPromise <span class="code operator">=</span> <span class="code keyword">new</span> <span class="code class-name">Promise</span><span class="code punctuation">((</span><span class="code parameter">resolve</span><span class="code punctuation">,</span> <span class="code parameter">reject</span><span class="code punctuation">)</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{</span><br>     <span class="code function">reject</span><span class="code punctuation">();</span><br><span class="code punctuation">}).</span><span class="code function">catch</span><span class="code punctuation">(()</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{</span><br>     console<span class="code punctuation">.</span><span class="code function">log</span><span class="code punctuation">(</span><span class="code string">'promise rejected'</span><span class="code punctuation">);</span><br><span class="code punctuation">});</span></code></pre>
+            </div>
+
+            <h2>Passing data to .THEN & .CATCH</h2>
+
+            <p>
+                In most cases we also want to know why something was resolved or rejected,
+                so we pass a value to these functions, some data that we can later access in them.
+            </p>
+
+            <div class="code-example">
+                <pre><code><span class="code keyword">const</span> myPromise <span class="code operator">=</span> <span class="code keyword">new</span> <span class="code class-name">Promise</span><span class="code punctuation">((</span><span class="code parameter">resolve</span><span class="code punctuation">,</span> <span class="code parameter">reject</span><span class="code punctuation">)</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{</span><br>     <span class="code keyword">if</span> <span class="code punctuation">(</span><span class="code boolean">true</span><span class="code punctuation">) {</span><br>     <span class="code function">resolve</span><span class="code punctuation">(</span><span class="code string">'promise got resolved intentionally'</span><span class="code punctuation">);</span><br>     <span class="code punctuation">}</span> <span class="code keyword">else</span> <span class="code punctuation">{</span><br>     <span class="code function">reject</span><span class="code punctuation">(</span><span class="code string">'promise got rejected intentionally'</span><span class="code punctuation">);</span><br>     <span class="code punctuation">}</span><br><span class="code punctuation">}).</span><span class="code function">then</span><span class="code punctuation">(</span><span class="code parameter">res</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{</span><br>     console<span class="code punctuation">.</span><span class="code function">log</span><span class="code punctuation">(</span><span class="code string">'success:'</span><span class="code punctuation">,</span> res<span class="code punctuation">);</span><br><span class="code punctuation">}).</span><span class="code function">catch</span><span class="code punctuation">(</span><span class="code parameter">res</span> <span class="code operator">=&gt;</span> <span class="code punctuation">{</span><br>     console<span class="code punctuation">.</span><span class="code function">log</span><span class="code punctuation">(</span><span class="code string">'error:'</span><span class="code punctuation">,</span> res<span class="code punctuation">);</span><br><span class="code punctuation">});</span></code></pre>
+            </div>
+
+            <h2>Better way to write Promises</h2>
+
+            <p>
+                We can make a function and return <code>Promise</code> whenever we run it. This way we can simply call a function and chain <code>.then()</code> and <code>.catch()</code> functions to it.<br>
+                This is considered a common pattern because we can have linear code that may have many <code>.then()</code> methods and only one <code>.catch()</code>, which will get triggered if any of the above methods fails.
+            </p>
+        </section>
+
+        <h2>Main use cases</h2>
+
+        <p>for:</p>
+
+        <ul>
+            <li>HTTP requests</li>
+            <li>nested callbacks</li>
+        </ul>
+    </article>
+
+</body>
+</html>
