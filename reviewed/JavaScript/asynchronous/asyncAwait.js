@@ -104,27 +104,17 @@ const getData = async () => {
 }
 getData();
 
-
-
-
-
-
-
-
-
-
-
 /*
-   * shortcut way
-promise.all will be resolved when all inner res will resolve
+   * There is also a better way to write the same logic from previous example.
+   * With "Promise.all()", we can just pass in all await responses and they
+   * will be resolved within that scope.
 */
-async function getData() {
-    const res1 = fetch('url');
-    const res2 = fetch('url');
-    const res3 = fetch('url');
-    const results = await Promise.all([res1, res2, res3]);
-    // runs only when previous is done
-    console.log(results);
-}
 
-getData()
+const getData = async () => {
+    const owl1 = fetch('url');
+    const owl2 = fetch('url');
+    const owl3 = fetch('url');
+    const responses = await Promise.all([owl1, owl2, owl3]);
+    console.log(responses);
+}
+getData();

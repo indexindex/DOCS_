@@ -1,18 +1,27 @@
 // TODO: VARIABLES
 
-// * variable is a named reference to a value, that can be later accessed through that name
-// * in JS we can declare a variable in 3 ways: let, const, var
+/*
+   * Variable is a named reference to a value, that can be later accessed through that name.
+   * In JS we can declare a variable in 3 ways: let, const, var.
+*/
 
-// * block-scoped local variable, value can be reassigned
+// * block-scoped local variable
+// ! value can be reassigned
 let var1;
 
-// * block-scoped constant global or local variable, value cannot be reassigned or be undefined
+// * block-scoped constant global or local variable
+// ! value cannot be reassigned or be undefined
 const var2 = null;
 
-// * function-scoped or global-scoped variable, value can be reassigned
-var var3;
+// * function-scoped or global-scoped variable
+// ! value can be reassigned
 // ! "var" keyword declaration is not recommended nowadays with presence of "let" and "const"
 // ! "var" is considered as legacy
+var var3;
+
+
+
+// TODO: VARIABLE ASSIGNMENT
 
 // * simple declaration of a variable, which needs to start with a letter but can end with a number
 let age;
@@ -27,6 +36,7 @@ age = 24;
    * stay the same until we redeclare it with a new value.
    * It is only the returned value that changed after calculation.
 */
+
 age + 1;
 // ? return value: 25
 

@@ -5,14 +5,16 @@
    * it is first defined, then executed when it is called.
    * Functions are in fact considered objects.
    * Example with "alert" popup (although it is a window method, we still execute it like a normal function):
-   *    alert = is a function, but it does nothing yet;
-   *    alert() = is a function that has been called, popup will appear;
-   *    alert("Hi!") = is a function that has been called with argument, popup will appear with text "Hi!".
+   *    alert - is a function, but it does nothing yet;
+   *    alert() - is a function that has been called, popup will appear;
+   *    alert("Hi!") - is a function that has been called with argument, popup will appear with text "Hi!".
 */
+
 // * function declaration
 function sayHello() {
     console.log('Hello');
 }
+
 // * function call
 sayHello();
 // ? return value: "Hello"
@@ -31,7 +33,7 @@ sayBye();
 
 
 // TODO: FUNCTION ARGUMENTS
- 
+
 /*
    * Function argument is very much like a placeholder.
    * Argument is usually what we call our function with,
@@ -40,6 +42,7 @@ sayBye();
    * It is easy to get confused about "argument" and "parameter" differences,
    * mainly one is set to "export" and other is set to "import".
 */
+
 function greet(name) { // * <-- this is the function with a parameter
     console.log('Hi', name);
 }
@@ -47,9 +50,9 @@ greet('Andri'); // * <-- this is the function call with argument
 // ? return value: "Hi Andri"
 
 // * in short...
-greet(a, b); // * <-- (a, b) are parameters
+function greet(a, b); // * <-- (a, b) are parameters
 
-greet('A', 'B'); // * <-- ("A", "B") are arguments
+greet('A', 'B'); // * <-- ('A', 'B') are arguments
 
 
 
@@ -67,9 +70,9 @@ function rollDice() {
 }
 rollDice();
 
-// * calling "throwDice" will call "rollDice" number of times
+// * calling "throwDice" will call "rollDice" given number of times
 function throwDice(numRolls) {
-    for (let i = 0; i < numRolls; i++) { rollDice(); };
+    for (let i = 0; i < numRolls; i++) { rollDice(); }
 }
 throwDice(6);
 /*
@@ -115,10 +118,9 @@ divide(1, 4);
    * "return" will stop all the code execution after it was declared.
    * Value can either be "true" of "false".
 */
+
 function isPurple(color) {
-    if (color.toLowerCase() === 'purple') {
-        return true;
-    }
+    if (color.toLowerCase() === 'purple') return true;
     /*
        * We don't always need "else" statement, with first condition
        * being "false", code still moves on and tackles "return", at which point
@@ -128,33 +130,27 @@ function isPurple(color) {
 }
 
 // * even shorter way, works mostly for simple yes/no situations
-function isGreen(color) {
-    return color.toLowerCase() === 'green';
-}
+function isGreen(color) { return color.toLowerCase() === 'green'; }
 
 // * run through an array of colors and return "true" if match was found
 function containsPurple(array) {
     for (let color of array) {
-
-        if (color === 'purple' || color === 'green') {
-            return true;
-        }
+        if (color === 'purple' || color === 'green') return true;
     }
     return false;
 }
 
 // * run the first condition if numbers are not greater than 10, else return multiplied value
 function multiply(a, b) {
-
-    if (a > 10 || b > 10) {
-        return 'keep numbers under 10';
-    }
+    if (a > 10 || b > 10) return 'keep numbers under 10';
     return a * b;
 }
 multiply(5, 10);
 // ? return value: 50
+
 multiply(5, 4);
 // ? return value: 20
+
 multiply(5, 40);
 // ? return value: "keep numbers under 10"
 
@@ -176,46 +172,23 @@ abc();
     ?    "c"
 */
 
-function def() {
-    console.log('d');
-    console.log('e');
-    console.log('f');
-}
-def();
-/*
-    ? return value:
-    ?    "d"
-    ?    "e"
-    ?    "f"
-*/
-
-// * DRY code ecample
-function alphabet(letter) {
-    console.log(letter);
-}
+// * DRY code example
+function alphabet(letter) { console.log(letter); }
 alphabet('a');
 alphabet('b');
 alphabet('c');
-alphabet('d');
-alphabet('e');
-alphabet('f');
 /*
     ? return value:
     ?    "a"
     ?    "b"
     ?    "c"
-    ?    "d"
-    ?    "e"
-    ?    "f"
 */
 
 
 
 // TODO: ASSIGNING FUNCTIONS TO VARIABLES
 
-const combine = function(a, b) {
-    return a + b;
-}
+const combine = function(a, b) { return a + b; }
 combine('abc', 'def');
 // ? return value: "abcdef"
 
@@ -241,7 +214,7 @@ isValidPassword('user', 'securepassword');
 function avg(array) {
     let total = 0;
 
-    array.forEach(num => { total += num; });
+    array.forEach(num => { total += num; })
 
     return total / array.length;
 }

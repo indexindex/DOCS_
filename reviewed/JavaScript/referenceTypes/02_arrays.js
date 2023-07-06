@@ -19,9 +19,9 @@ const lotto = [44, 12, 33, 56, 66];
 const myCollection = [12, 'dog', true, null, NaN];
 
 // * making a new array with a method
+// ! this way of declaring an array is not recommended
 new Array(44, 12, 33, 56, 66);
 // ? return value: [44, 12, 33, 56, 66]
-// ! this way of declaring an array is not recommended
 
 
 
