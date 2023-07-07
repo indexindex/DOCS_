@@ -110,7 +110,7 @@ lotto.indexOf(56);
 
 lotto.indexOf(3);
 // ? return value: -1
-// * value -1 means "not found"
+// ? value -1 means "not found"
 
 
 
@@ -126,7 +126,7 @@ const greet = ['H', 'E', 'L', 'L', 'O'];
 greet.join();
 // ? return value: "H,E,L,L,O"
 
-// * join can accept whatever character i give it to combine the array
+// * join can accept whatever character i give it, to combine the array
 greet.join('');
 // ? return value: "HELLO"
 
@@ -196,4 +196,4 @@ let index = array.indexOf(item);
 
 if (index !== -1) { array.splice(index, 1); }
 array;
-// ? return value: [ "item1", "item2", "item4", "item5" ]
+// ? return value: ["item1", "item2", "item4", "item5"]
