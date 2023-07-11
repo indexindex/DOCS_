@@ -197,3 +197,11 @@ let index = array.indexOf(item);
 if (index !== -1) { array.splice(index, 1); }
 array;
 // ? return value: ["item1", "item2", "item4", "item5"]
+
+
+
+// * retrieve only specific numbers from an array (numbers that are greater than 2)
+const numbers = [1, 2, 3, 4, 5];
+const greaterThan2 = numbers.filter(number => number > 2);
+greaterThan2;
+// ? return value: [3, 4, 5]
