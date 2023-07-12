@@ -6,8 +6,9 @@
    * "logGoogleUser".
 */
 
-import { signInWithGooglePopup } from "./firebase";
+import { signInWithGooglePopup, createUserDocumentFromAuth } from "./firebase";
 
 const logGoogleUser = async () => {
     const response = await signInWithGooglePopup();
+    createUserDocumentFromAuth(response.user);
 }

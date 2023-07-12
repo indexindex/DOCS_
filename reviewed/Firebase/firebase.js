@@ -67,10 +67,46 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 
 
-
-
-
-
-
-
 // TODO: FIRESTORE DATABASE (CONSOLE)
+
+/*
+   * Actual database, where we can store a record of signed in users.
+   * Firestore data pattern: collection (*), document (**), data (***).
+   ? Example:
+   ?    * users
+   ?       ** user
+   ?          *** name: "Andri"
+   ?          *** income: {unit: 4000, currency: "€"}
+   * When creating our database through console by clicking "Create database",
+   * it is best to select "Production mode".
+   * After database is set up, we should define rules (under Tab "Rules").
+   * Rules essentially say who is allowed to change what documents.
+
+   * Back in our "firebase.js", we need to import necessary instances.
+   ? "doc" - to retrieve documents from Firestore database (GET DOCUMENT).
+   ? "getDoc" - get documents data from Firestore database (GET DATA).
+   ? "setDoc" - set documents data to Firestore database (SET DATA).
+   * "db" will be the starting point for "CRUD" operations.
+*/
+
+// import { initializeApp } from 'firebase/app';
+// import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore'
+
+// ...
+
+export const db = getFirestore();
+
+// * will handle authenticated user response from front-end side
+export const createUserDocumentFromAuth = async (userAuth) => {
+
+   /*
+      * We check for existing document, has 3 arguments: databse, collections, unique ID.
+      * Usually from Google sign-in response we get unique ID from key ".uid".
+      * with "userDocData" we can use a method called ".exists()" to check
+      * if there is any data related to that specific document.
+   */
+   const userDocRef = doc(db, 'users', userAuth.uid);
+   const userDocData =  await getDoc(userDocRef);
+   console.log(userDocData.exists());
+}
