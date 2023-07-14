@@ -105,8 +105,28 @@ export const createUserDocumentFromAuth = async (userAuth) => {
       * Usually from Google sign-in response we get unique ID from key ".uid".
       * with "userDocData" we can use a method called ".exists()" to check
       * if there is any data related to that specific document.
+      * After we have "userDocData", we want to check if user exists,
+      * if user does not exist, then we create that user with data provided.
+      ? "setDoc()" accepts 2 arguments, user document reference and 
+      ? the data that we want to set.
+      
    */
    const userDocRef = doc(db, 'users', userAuth.uid);
    const userDocData =  await getDoc(userDocRef);
-   console.log(userDocData.exists());
+
+   if (!userDocData.exists()) {
+      const { displayName, email } = userAuth;
+      const createdAt = new Date();
+
+      try {
+         await setDoc(userDocRef, {
+            displayName, email, createdAt
+         })
+      } catch(error) {
+         console.error('Error while creating a user', error.message);
+      }
+   }
+
+   // * if user does exist
+   return userDocRef;
 }
