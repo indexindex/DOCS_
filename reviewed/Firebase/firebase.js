@@ -41,20 +41,37 @@ const firebaseApp = initializeApp(firebaseConfig);
    * We need to set up a provider to be able to use authentication services.
    * Once we have our provider, we need to configure it by using ".setCustomParameters", 
    * telling which authentication method we prefer.
+   * When we wish to have a different authentication method, we should
+   * pull in specific provider for that.
 */
 
 // import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import { getAuth, signInWithRedirect, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth';
 
 // ...
 
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({
     prompt: 'select_account'
 })
 
 export const auth = getAuth();
-export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+// ! OR
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
+// ! OR
+
+
+
+// TODO: AUTHENTICATION WITH EMAIL & PASSWORD
+
+/*
+   * Separate code outside of any other code block.
+*/
+export const createAuthUserWithEmailAndPassword = async (email, password) => {
+   if (!email || !password) return;
+   return await createUserWithEmailAndPassword(auth, email, password);
+}
 
 
 
@@ -99,6 +116,7 @@ export const db = getFirestore();
 
 // * will handle authenticated user response from front-end side
 export const createUserDocumentFromAuth = async (userAuth) => {
+   if (!userAuth) return;
 
    /*
       * We check for existing document, has 3 arguments: databse, collections, unique ID.
@@ -129,4 +147,4 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 
    // * if user does exist
    return userDocRef;
-}
+} 
