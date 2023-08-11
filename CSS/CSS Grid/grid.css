@@ -1,0 +1,7 @@
+/*
+* no overflow issues:
+* min() inside will activate when content is less than the first value,
+* and it will just use the second value from there on
+*/
+
+grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
