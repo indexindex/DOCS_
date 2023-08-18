@@ -1,8 +1,10 @@
+// ! CLASS COMPONENTS
+
 // TODO: COMPONENT
 
 /*
    * Declaring a component is a good way to generalise
-   * functional parts of our app. 
+   * functional parts of our app.
    * Components rerender in two cases: when "state" is called or
    * when "props" value changes.
 */
@@ -10,9 +12,7 @@
 import { Component } from 'react';
 
 class CustomComponent extends Component {
-    render() {
-        return <h1>This is a custom component</h1>
-    }
+    render() { return <h1>This is a custom component</h1> }
 }
 
 export default CustomComponent;
@@ -29,11 +29,7 @@ export default CustomComponent;
 class App extends Component {
     // * ...
 
-    render() {
-        return (
-            <CustomComponent/>
-        )
-    }
+    render() { return <CustomComponent/> }
 }
 
 
@@ -47,4 +43,4 @@ class App extends Component {
    * with "this.props.anything".
 */
 
-<CustomComponent anything={'text'} />
+<CustomComponent anything='text' cool={1 + 2} />

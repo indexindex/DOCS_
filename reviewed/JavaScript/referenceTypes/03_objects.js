@@ -2,7 +2,7 @@
 
 /*
    * Objects are collections of properties. They are good because 
-   * we can have properties, which define their characteristics.
+   * they can have properties, which define their characteristics.
 */
 
 // * simple mixed value object
@@ -18,7 +18,7 @@ const fitnessData = {
 
 // TODO: OBJECT ACCESS
 
-// * accessing an object property that has not been defined will result with "undefined".
+// * accessing an object property that has not been defined will result with "undefined"
 
 // * access object key value with . syntax
 fitnessData.totalMiles;
@@ -53,7 +53,7 @@ profile;
 
 // TODO: UPDATE OBJECT PROPERTY
 
-// * to update our object we have two ways:
+// * updating objects can be done in two ways:
 
 // * updating with '.' syntax
 profile.name = 'Maria';
